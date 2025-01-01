@@ -13,6 +13,11 @@ from .base_det_dataset import BaseDetDataset
 @DATASETS.register_module()
 class CocoDataset(BaseDetDataset):
     """Dataset for COCO."""
+    METAINFO = {
+        'classes': ('1', '2'),
+        'palette': [(220, 20, 60), (119, 11, 32),]
+    }
+    '''
 
     METAINFO = {
         'classes':
@@ -52,6 +57,7 @@ class CocoDataset(BaseDetDataset):
          (196, 172, 0), (95, 54, 80), (128, 76, 255), (201, 57, 1),
          (246, 0, 122), (191, 162, 208)]
     }
+    '''
     COCOAPI = COCO
     # ann_id is unique in coco dataset.
     ANN_ID_UNIQUE = True
